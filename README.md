@@ -30,6 +30,7 @@ The stylesheet `.css` is still very basic but I'll get to it sooner or later.
 ```
 git clone https://github.com/liroyvh/signal-export.git && cd signal-export && pip install -r requirements.txt && brew install openssl sqlcipher wkhtmltopdf && ./sigexport.py EXPORT && cd EXPORT && echo "Now generating PDF files..." && mkdir -p pdf && find . -maxdepth 2 -name '*.html' -exec sh -c 'for f; do wkhtmltopdf --enable-local-file-access "$f" "./pdf/$(basename "$(dirname "$f")").pdf"; done' _ {} +
 ```
+- This is for first use only, for future use (with new backups): jump to the "Usage" chapter.
 
 &nbsp;
 ## Installation - MANUAL (MacOS and Linux)
