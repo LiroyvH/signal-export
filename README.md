@@ -26,7 +26,9 @@ The stylesheet `.css` is still very basic but I'll get to it sooner or later.
 &nbsp;
 ## Installation - SEMI-AUTOMATED (MacOS ONLY! (at this time))
 - Open up the Terminal-app on your Mac and install [Homebrew](https://brew.sh) by copy/pasting this command and pressing enter:  
-```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"```  
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```  
 It may at some point prompt you for the password of your Mac. Type it in and hit enter, note that you will NOT see anything happening whilst you type. No \*\*\*\*\* or anything.
 - Once homewbrew is succesfully installed: to automatically download this script + dependencies and backup all your chats + also convert them to PDF; copy/paste this command to your Terminal and press enter:
 ```
