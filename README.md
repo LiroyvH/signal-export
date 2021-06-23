@@ -9,6 +9,8 @@ This is currently the only known way to back-up Signal Desktop and also the only
 Please continue reading to find all installation instructions and instructions to generate PDF's.  
 Everything comes as-is and comes with zero guarantees (of proper or safe operation). Using this tool, any commands or instructions is at your own risk. Do not rely on the output of these scripts and commands as your sole backup and double-check the output. Tool can stop working if Signal changes anything to Signal Desktop. Let's hope they don't make any blocking changes that keep us away from safeguarding our data. :) 
 
+This is a work in progress, more convenience features and commands to automate the process will be added in the near future.  
+
 &nbsp;
 ## Example
 An export for a group conversation looks as follows:
