@@ -1,9 +1,9 @@
-# signal-export
-Export chats from the [Signal](https://www.signal.org/) [Desktop app](https://www.signal.org/download/) to Markdown and HTML files with attachments. Each chat is exported as an individual .md/.html file and the attachments for each are stored in a separate folder. Attachments are linked from the Markdown files and displayed in the HTML (pictures, videos, voice notes).
+# signal-export: PDF friendly
+Export chats from the [Signal](https://www.signal.org/) [Desktop app](https://www.signal.org/download/) to Markdown and HTML files with attachments. Each chat is exported as an individual .md/.html file and the attachments for each are stored in a separate folder. Attachments are linked from the Markdown files and displayed in the HTML (pictures, videos, voice notes). This is forked from https://github.com/carderne/signal-export. 
 
-Currently this seems to be the only way to get chat history out of Signal!
+In this fork, I have made changes to the script to ensure PDF files can properly be generated from the output. This version of this script removes all pagination present in the original, for the sake of generating PDF's. It also re-renders emoji's in the HTML-output, so that webkit renders can successfully include emoji's in the output PDF; which is not possible with the original output.
 
-Adapted from https://github.com/mattsta/signal-backup, which I suspect will be hard to get working now.
+Originally adapted from https://github.com/mattsta/signal-backup.
 
 ## Example
 An export for a group conversation looks as follows:
@@ -20,7 +20,7 @@ This is converted to HTML at the end so it can be opened with any web browser. T
 ## Installation
 First clone and install requirements (preferably into a virtualenv):
 ```
-git clone https://github.com/carderne/signal-export.git
+git clone https://github.com/liroyvh/signal-export.git
 cd signal-export
 pip install -r requirements.txt
 ```
@@ -42,12 +42,12 @@ sudo make install
 
 ### For MacOS
 - Install [Homebrew](https://brew.sh).
-- Run `brew install openssl sqlcipher`
+- Run `brew install openssl sqlcipher wkhtmltopdf`
 
 ## Usage
-The following should work:
+The following should work, and exports all your conversations to a sub-directory named "EXPORT":
 ```
-./sigexport.py outputdir
+./sigexport.py EXPORT
 ```
 
 If you get an error:
@@ -71,6 +71,13 @@ Options:
   -v, --verbose      Enable verbose output logging
   --help             Show this message and exit.
 ```
+
+Now if you want to convert all the conversations to PDF, please run the following command in your "EXPORT" folder:
+```
+mkdir -p pdf && find . -maxdepth 2 -name '*.html' -exec sh -c 'for f; do wkhtmltopdf --enable-local-file-access "$f" "./pdf/$(basename "$(dirname "$f")").pdf"; done' _ {} +
+```
+**PLEASE BE AWARE THAT THE COMMAND ABOVE TO EXPORT TO PDF HAS BEEN WRITTEN FOR MacOS**  
+For Linux: please first find instructions to install wkhtmltopdf for your distribution. (Example: [Ubuntu](https://websiteforstudents.com/how-to-install-wkhtmltopdf-wkhtmltoimage-on-ubuntu-18-04-16-04/)) Then run the above command.
 
 You can add `--source /path/to/source/dir/` if the script doesn't manage to find the Signal config location. Default locations per OS are below. The directory should contain a folder called `sql` with a `db.sqlite` inside it.
 - Linux: `~/.config/Signal/`
