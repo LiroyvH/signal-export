@@ -32,7 +32,7 @@ The stylesheet `.css` is still very basic but I'll get to it sooner or later.
 It may at some point prompt you for the password of your Mac. Type it in and hit enter, note that you will NOT see anything happening whilst you type. No \*\*\*\*\* or anything.
 - Once homewbrew is succesfully installed: to automatically download this script + dependencies and backup all your chats + also convert them to PDF; copy/paste this command to your Terminal and press enter:
 ```
-git clone https://github.com/liroyvh/signal-export.git && cd signal-export && pip install -r requirements.txt && brew install openssl sqlcipher wkhtmltopdf && ./sigexport.py EXPORT && cd EXPORT && echo "Now generating PDF files..." && mkdir -p pdf && find . -maxdepth 2 -name '*.html' -exec sh -c 'for f; do wkhtmltopdf --enable-local-file-access "$f" "./pdf/$(basename "$(dirname "$f")").pdf"; done' _ {} + && open . -a Finder
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/liroyvh/signal-export/master/MacEasyInstall.sh)"
 ```
 - Now let it do its thing. It can take several minutes, if you have tons and tons of media it can actually take quite some time. Once it's done, a Finder window will open with all your conversations in folders. You can find the PDF copies in the "pdf" folder. 
 - This is for first time use only, for future use (with new backups): jump to the "Usage" chapter.
