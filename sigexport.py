@@ -298,8 +298,16 @@ def create_html(dest, msgs_per_page=100):
                 "<link rel=stylesheet href='../style.css'>"
                 "</head>"
                 "<body>"
-                "<div class=first><a href=#pg0>FIRST</a></div>"
-                f"<div class=last><a href=#pg{last_page}>LAST</a></div>",
+                "<style>"
+                "img.emoji {"
+                "height: 1em;"
+                "width: 1em;"
+                "margin: 0 .05em 0 .1em;"
+                "vertical-align: -0.1em;"
+                "}"
+                "</style>"
+                "<script src='https://twemoji.maxcdn.com/2/twemoji.min.js?11.2'></script>"
+                "<script>window.onload = function () { twemoji.parse(document.body);}</script>",
                 file=htfile,
             )
 
@@ -308,19 +316,19 @@ def create_html(dest, msgs_per_page=100):
                 if i % msgs_per_page == 0:
                     nav = ""
                     if i > 0:
-                        nav += "</div>"
-                    nav += f"<div class=page id=pg{page_num}>"
-                    nav += "<nav>"
-                    nav += "<div class=prev>"
+                        nav += "&nbsp;"
+                    nav += f"&nbsp;"
+                    nav += "&nbsp;"
+                    nav += "&nbsp;"
                     if page_num != 0:
-                        nav += f"<a href=#pg{page_num-1}>PREV</a>"
+                        nav += f"&nbsp;"
                     else:
-                        nav += "PREV"
+                        nav += "&nbsp;"
                     nav += "</div><div class=next>"
                     if page_num != last_page:
-                        nav += f"<a href=#pg{page_num+1}>NEXT</a>"
+                        nav += f"&nbsp;"
                     else:
-                        nav += "NEXT"
+                        nav += "&nbsp;"
                     nav += "</div></nav>"
                     print(nav, file=htfile)
                     page_num += 1
