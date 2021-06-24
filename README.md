@@ -32,6 +32,7 @@ The stylesheet `.css` is still very basic but I'll get to it sooner or later.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```  
 It may at some point prompt you for the password of your Mac. Type it in and hit enter, note that you will NOT see anything happening whilst you type. No \*\*\*\*\* or anything.
+- Check if pip is installed by running: `sudo easy_install pip`
 - Once homewbrew is succesfully installed: to automatically download this script + dependencies and backup all your chats + also convert them to PDF; copy/paste this command to your Terminal and press enter:
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/liroyvh/signal-export/master/MacEasyInstall.sh)"
@@ -47,12 +48,13 @@ First, clone and install requirements (preferably into a virtualenv):
 ```
 git clone https://github.com/liroyvh/signal-export.git
 cd signal-export
-pip install -r requirements.txt
 ```
 
 ### For MacOS:
 - Install [Homebrew](https://brew.sh).
-- Run `brew install openssl sqlcipher wkhtmltopdf`
+- Run `brew install openssl sqlcipher wkhtmltopdf` and if it says permissions are wrong: run the commands it asks you to.
+- Check if pip is installed: `sudo easy_install pip`
+- Run `pip3 install -r requirements.txt`
 
 ### For Linux
 First get sqlcipher working:
