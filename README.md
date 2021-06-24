@@ -36,7 +36,7 @@ It may at some point prompt you for the password of your Mac. Type it in and hit
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/liroyvh/signal-export/master/MacEasyInstall.sh)"
 ```
-- Now let it do its thing. It can take several minutes, if you have tons and tons of media it can actually take quite some time. Once it's done, a Finder window will open with all your conversations in folders. You can find the PDF copies in the "pdf" folder. 
+- Now let it do its thing. It can take several minutes and it might prompt you for your Mac's password again. If you have tons and tons of media it can actually take quite some time. Once it's done, a Finder window will open with all your conversations in folders. You can find the PDF copies in the "pdf" folder. 
 - This is for first time use only, for future use (with new backups): jump to the "Usage" chapter.
 
 &nbsp;
