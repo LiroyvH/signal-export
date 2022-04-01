@@ -48,9 +48,6 @@ arch -x86_64 /bin/zsh --login
 - Now let it do its thing. It can take several minutes and it might prompt you for your Mac's password again. If you have tons and tons of media it can actually take quite some time. Once it's done, a Finder window will open with all your conversations in folders. You can find the PDF copies in the "pdf" folder. 
 - This is for first time use only, for future use (with new backups): jump to the "Usage" chapter.
 
-## For M1/Apple Silicon users, please use these commands instead:
-
-
 &nbsp;
 ## Installation - MANUAL (MacOS and Linux)
 
