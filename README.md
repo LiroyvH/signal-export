@@ -33,6 +33,7 @@ The stylesheet `.css` is still very basic but I'll get to it sooner or later.
 ```  
 It may at some point prompt you for the password of your Mac. Type it in and hit enter, note that you will NOT see anything happening whilst you type. No \*\*\*\*\* or anything.
 - Check if pip is installed by running: `sudo easy_install pip`
+- Now we're going to do the magic, please use the commands for your architecture (Intel/Apple):
 - - For **INTEL** Mac-users: 
 once this is all succesfully installed: to automatically download this script + dependencies and backup all your chats + also convert them to PDF; copy/paste this command to your Terminal and press enter:
 ```
