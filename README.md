@@ -33,12 +33,18 @@ The stylesheet `.css` is still very basic but I'll get to it sooner or later.
 ```  
 It may at some point prompt you for the password of your Mac. Type it in and hit enter, note that you will NOT see anything happening whilst you type. No \*\*\*\*\* or anything.
 - Check if pip is installed by running: `sudo easy_install pip`
-- Once this is all succesfully installed: to automatically download this script + dependencies and backup all your chats + also convert them to PDF; copy/paste this command to your Terminal and press enter:
+- Once this is all succesfully installed: to automatically download this script + dependencies and backup all your chats + also convert them to PDF; copy/paste this command to your Terminal and press enter (DO NOT RUN WHEN ON M1, SCROLL DOWN):
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/liroyvh/signal-export/master/MacEasyInstall.sh)"
 ```
 - Now let it do its thing. It can take several minutes and it might prompt you for your Mac's password again. If you have tons and tons of media it can actually take quite some time. Once it's done, a Finder window will open with all your conversations in folders. You can find the PDF copies in the "pdf" folder. 
 - This is for first time use only, for future use (with new backups): jump to the "Usage" chapter.
+
+## For M1/Apple Silicon users, please use these commands instead:
+```
+arch -x86_64 /bin/zsh --login
+/bin/zsh -c "$(curl -fsSL https://raw.githubusercontent.com/liroyvh/signal-export/master/MacEasyInstall.sh)"
+```
 
 &nbsp;
 ## Installation - MANUAL (MacOS and Linux)
@@ -53,6 +59,7 @@ cd signal-export
 ### For MacOS:
 - Install [Homebrew](https://brew.sh).
 - Run `brew install openssl sqlcipher wkhtmltopdf` and if it says permissions are wrong: run the commands it asks you to.
+- If you're on an Apple Silicon (M1, M1 Pro, etc.) Mac, you need to switch the architecture and shell before continuing, by running the following command: arch -x86_64 /bin/zsh --login
 - Check if pip is installed: `sudo easy_install pip`
 - Run `pip3 install -r requirements.txt`
 
