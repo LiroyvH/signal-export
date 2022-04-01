@@ -61,7 +61,7 @@ cd signal-export
 ### For MacOS:
 - Install [Homebrew](https://brew.sh).
 - Run `brew install openssl sqlcipher wkhtmltopdf` and if it says permissions are wrong: run the commands it asks you to.
-- If you're on an Apple Silicon (M1, M1 Pro, etc.) Mac, you need to switch the architecture and shell before continuing, by running the following command: arch -x86_64 /bin/zsh --login
+- If you're on an Apple Silicon (M1, M1 Pro, etc.) Mac, you need to switch the architecture and shell before continuing, by running the following command: `arch -x86_64 /bin/zsh --login`
 - Check if pip is installed: `sudo easy_install pip`
 - Run `pip3 install -r requirements.txt`
 
@@ -86,12 +86,14 @@ The following should work, and exports all your conversations to a sub-directory
 ```
 ./sigexport.py EXPORT
 ```
+If you get an error regarding pysqlcipher3 not being able to run due to a wrong architecture (arm64 instead of x86_64), you're probably running on a M1-powered Mac. Switch your terminal to x86_64 first: `arch -x86_64 /bin/zsh --login`. Then try again.
 
-If you get an error:
+If you get the following error:
 
     pysqlcipher3.dbapi2.DatabaseError: file is not a database
 
 try adding the `--manual` option.
+
 
 The full options are below:
 ```
