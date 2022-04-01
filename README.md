@@ -33,12 +33,12 @@ The stylesheet `.css` is still very basic but I'll get to it sooner or later.
 ```  
 It may at some point prompt you for the password of your Mac. Type it in and hit enter, note that you will NOT see anything happening whilst you type. No \*\*\*\*\* or anything.
 - Check if pip is installed by running: `sudo easy_install pip`
--- For **INTEL** Mac-users: 
+- - For **INTEL** Mac-users: 
 once this is all succesfully installed: to automatically download this script + dependencies and backup all your chats + also convert them to PDF; copy/paste this command to your Terminal and press enter:
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/liroyvh/signal-export/master/MacEasyInstall.sh)"
 ```
--- For **Apple Silicon (M1, M1 Pro, etc.)** Mac-users:
+- - For **Apple Silicon (M1, M1 Pro, etc.)** Mac-users:
 once this is all succesfully installed: to automatically download this script + dependencies and backup all your chats + also convert them to PDF; copy/paste and run (enter) these two commands in your Terminal one-by-one:
 ```
 arch -x86_64 /bin/zsh --login
