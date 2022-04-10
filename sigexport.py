@@ -101,16 +101,16 @@ def make_simple(dest, conversations, contacts):
 
         for msg in messages:
             timestamp = (
-                 msg["timestamp"]
-                 if "timestamp" in msg
-                 else msg["sent_at"]
-                 if "sent_at" in msg
-                 else None
-             )
+                msg["timestamp"]
+                if "timestamp" in msg
+                else msg["sent_at"]
+                if "sent_at" in msg
+                else None
+            )
 
             if timestamp is None:
-                     if log:
-                     print("\t\tNo timestamp or sent_at; date set to 1970")
+                if log:
+                    print("\t\tNo timestamp or sent_at; date set to 1970")
                 date = "1970-01-01 00:00"
             else:
                 date = datetime.fromtimestamp(timestamp / 1000.0).strftime(
