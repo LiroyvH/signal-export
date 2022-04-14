@@ -61,9 +61,10 @@ cd signal-export
 ### For MacOS:
 - Install [Homebrew](https://brew.sh).
 - Run `brew install openssl sqlcipher wkhtmltopdf` and if it says permissions are wrong: run the commands it asks you to.
-- If you're on an Apple Silicon (M1, M1 Pro, etc.) Mac, you need to switch the architecture and shell before continuing, by running the following command: `arch -x86_64 /bin/zsh --login`
+- NOTE: If you're on an Apple Silicon (M1, M1 Pro, etc.) Mac, you need to switch the architecture and shell before continuing, by running the following command: `arch -x86_64 /bin/zsh --login`. Conversely, if you're on a Mac with Intel CPU using zsh you must first switch to bash. (`arch -x86_64 /bin/bash`)
 - Check if pip is installed: `sudo easy_install pip`
 - Run `pip3 install -r requirements.txt`
+
 
 ### For Linux
 First get sqlcipher working:
