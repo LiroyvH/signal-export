@@ -310,7 +310,7 @@ def create_html(dest, msgs_per_page=100):
                 "vertical-align: -0.1em;"
                 "}"
                 "</style>"
-                "<script src='https://twemoji.maxcdn.com/2/twemoji.min.js?11.2'></script>"
+                "<script src='https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js?11.2'></script>"
                 "<script>window.onload = function () { twemoji.parse(document.body);}</script>",
                 file=htfile,
             )
